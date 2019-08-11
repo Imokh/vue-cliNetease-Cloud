@@ -1,28 +1,27 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div>
+        <search></search>
+        <router-view></router-view>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+//倒入search组件
+import search from './components/search'
+//倒入slider组件
+//import silder from './components/silder'
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
+//注册组件
+components:{
+    search,
+    
+},
+mounted() {
+    this.$router.push('/slider')
+},
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
